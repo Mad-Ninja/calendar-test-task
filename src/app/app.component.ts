@@ -90,7 +90,8 @@ export class AppComponent implements OnInit{
       
       if(this.fieldDays.length > 0){
         let obj = this.fieldDays.find((day) =>{
-        return new Date(day.date).getDate() == calendarDayObj.date.getDate()
+        return new Date(day.date).toISOString() == calendarDayObj.date.toISOString();
+        console.log(obj);
       })
         if(obj){
           calendarDayObj.events = obj.events;
